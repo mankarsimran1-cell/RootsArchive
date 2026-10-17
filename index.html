@@ -1,0 +1,308 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RootsArchive | Palghar-Dahanu Heritage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background: #faf6ed;
+            color: #34271f;
+        }
+
+        header {
+            background: #354b36;
+            color: white;
+            padding: 22px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h2 {
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 18px;
+            font-family: Arial, sans-serif;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 85px 20px;
+            background: linear-gradient(135deg, #e7d6b6, #f8edda);
+        }
+
+        .hero p {
+            color: #6b573f;
+            margin: 18px auto;
+            max-width: 650px;
+            line-height: 1.8;
+        }
+
+        .hero h1 {
+            font-size: clamp(35px, 6vw, 58px);
+            color: #354b36;
+        }
+
+        .hero button {
+            background: #354b36;
+            color: white;
+            padding: 13px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .section {
+            padding: 55px 8%;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .section > p {
+            color: #75685a;
+            margin-bottom: 30px;
+        }
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 30px;
+    align-items: stretch;
+}
+
+
+
+        .card {
+            background: white;
+            padding: 28px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px #4b392011;
+            border-bottom: 4px solid #a77b45;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card .symbol {
+            font-size: 38px;
+        }
+
+        .card h3 {
+            margin: 15px 0 10px;
+            color: #354b36;
+        }
+
+        .card p {
+            color: #6b6259;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #354b36;
+            color: white;
+            text-align: center;
+            padding: 24px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                justify-content: center;
+                text-align: center;
+            }
+
+            nav a {
+                margin: 5px;
+                display: inline-block;
+            }
+
+            .hero {
+                padding: 60px 18px;
+            }
+        }
+    
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #354b36;
+    color: white;
+    margin-top: 30px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: 600px;
+    margin: 25px auto;
+    padding: 0 15px;
+}
+
+#heritageSearch {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 18px;
+    border: 2px solid #d6c7a1;
+    border-radius: 30px;
+    font-size: 15px;
+    font-family: Georgia, serif;
+    background: #fffdf7;
+    color: #34271f;
+    outline: none;
+    transition: 0.3s;
+}
+
+#heritageSearch:focus {
+    border-color: #354b36;
+    box-shadow: 0 0 0 3px rgba(53, 75, 54, 0.15);
+}
+
+.search-container button {
+    padding: 14px 24px;
+    border: none;
+    border-radius: 30px;
+    background: #354b36;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-container button:hover {
+    background: #263927;
+    transform: translateY(-2px);
+}
+
+</style>
+
+</head>
+<body>
+
+    <header>
+        <h2>🌿 RootsArchive</h2>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#explore">Explore</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>Discover Our Roots</h1>
+        <p>
+            A digital journey into the cultural heritage of
+            Palghar and Dahanu. Explore traditional art,
+            festivals, local stories and the knowledge
+            passed down through generations.
+        </p>
+        <button onclick="document.getElementById('explore').scrollIntoView({behavior:'smooth'})">
+            Explore Our Heritage
+        </button>
+    </section>
+    <section class="section" id="explore">     
+<div class="search-container">
+    <input type="text" id="heritageSearch" placeholder="Search Warli Art, Festivals, Food...">
+    <button onclick="searchHeritage()">Search</button>
+</div>
+        <h2>Explore Our Heritage</h2>
+        <p>Every tradition tells a story worth preserving.</p>
+        <div class="cards">
+            <div class="card" onclick="window.location.href='warli.html'" style="cursor: pointer;">
+                <img src="images/warli.jpg" alt="Warli Art" class="card-image">
+                <div class="symbol">🎨</div>
+                <h3>Warli Art</h3>
+                <p>Discover traditional paintings and the stories expressed through their patterns.</p>
+            </div>
+            <div class="card" onclick="window.location.href='festivals.html'" style="cursor: pointer;">
+                <img src="images/tarpa.jpg" alt="Festivals & Traditions">
+                <div class="symbol">🎉</div>
+                <h3>Festivals & Traditions</h3>
+                <p>Explore local celebrations, customs and cultural practices.</p>
+            </div>
+
+            <div class="card" onclick="window.location.href='food.html'" style="cursor: pointer;">
+                <img src="images/chikoo.jpg" alt="Dahanu chikoo fruit" class="card-image">
+                <div class="symbol">🥭</div>
+                <h3>Local Food & Farming</h3>
+                <p>Learn about regional food traditions and Dahanu's famous chikoo cultivation.</p>
+            </div>
+
+            <div class="card" onclick="window.location.href='folk.html'" style="cursor: pointer;">
+                <img src="images/folk_story.jpg" alt="Palghar folk culture" class="card-image">
+                <div class="symbol">📖</div>
+                <h3>Folk Stories</h3>
+                <p>Preserve community stories, memories and traditional knowledge.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <h2>About RootsArchive</h2>
+        <p>
+            Our mission is to document and celebrate the cultural
+            heritage of Palghar and Dahanu for future generations.
+        </p>
+    </section>
+
+<footer>
+    <p>© 2026 RootsArchive</p>
+    <p>Preserving the cultural heritage of Palghar and Dahanu.</p>
+</footer>
+
+<script>
+function searchHeritage() {
+    const input = document.getElementById("heritageSearch").value.toLowerCase().trim();
+    const cards = document.querySelectorAll(".card");
+    let found = false;
+
+    cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+
+        if (text.includes(input)) {
+            card.style.display = "block";
+            found = true;
+        } else {
+            card.style.display = "none";
+        }
+    });
+
+    if (input === "") {
+        cards.forEach(card => card.style.display = "block");
+    } else if (!found) {
+        alert("No matching heritage topic found. Try Warli, Festivals, Food, or Folk Stories.");
+    }
+}
+</script>
+</body>
+</html>
